@@ -6,7 +6,7 @@ import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 sentry_sdk.init(
-    dsn="https://2ba68720d38e42079b243c9c5774e05c@sentry.io/1316515",
+    dsn="https://15362622700140e6a30f78bed6c163da@o87286.ingest.sentry.io/5240212",
     integrations=[FlaskIntegration()],
     release=os.environ.get("VERSION")
 )
@@ -43,7 +43,7 @@ def process_order(cart):
             raise Exception("Not enough inventory for " + item['id'])
         else:
             tempInventory[item['id']] -= 1
-            print 'Success: ' + item['id'] + ' was purchased, remaining stock is ' + str(tempInventory[item['id']])
+            print('Success: ' + item['id'] + ' was purchased, remaining stock is ' + str(tempInventory[item['id']]))
     Inventory = tempInventory 
 
 @app.before_request
@@ -67,7 +67,7 @@ def sentry_event_context():
 def checkout():
 
     order = json.loads(request.data)
-    print "Processing order for: " + order["email"]
+    print("Processing order for: " + order["email"])
     cart = order["cart"]
     
     process_order(cart)

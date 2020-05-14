@@ -4,7 +4,7 @@
 #SENTRY_AUTH_TOKEN=<your_auth_token>
 
 SENTRY_ORG=testorg-az
-SENTRY_PROJECT=flask
+SENTRY_PROJECT=adamflasksampleapp
 VERSION=`sentry-cli releases propose-version`
 
 REPOSITORY=us.gcr.io/sales-engineering-sf
